@@ -1,0 +1,5 @@
+frida==17.26.1
+Pillow>=10.0
+cryptography>=42.0
+pefile>=2023.2.7
+capstone>=5.0

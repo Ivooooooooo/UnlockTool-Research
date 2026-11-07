@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+pylibs/
+*.exe
+*.log
+*.zip
+*.dsm
+*.ll
+*.bc
+*.config.json
+bodies/
+temp/
+.DS_Store
+Thumbs.db
