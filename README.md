@@ -6,9 +6,7 @@ Themida/WinLicense reacts when that gate is bypassed, and what the app actually 
 This repository is the handover: the findings, the runtime proof of concept, the scripts I used, and
 the one screenshot that matters.
 
-**No binaries are included.** They are large and the owners already have them. The installer I worked
-from is `UnlockTool-2026-11-05-0.exe`, SHA-256:
-
+**No binaries are included.** They are large. The installer I worked from is `UnlockTool-2026-11-05-0.exe`, SHA-256:
 ```
 F2E2BA536003CFEEF0E3D4342CF082E83E2309C33E5A55B13FEA9D967F93ACD7
 ```
@@ -27,8 +25,9 @@ memory after the process starts.
 | Unpacked module I worked from | 491,245,568 bytes, SHA-256 `EB2681FBC7A80A3D278504BF2D1915DFF9AD8B03DAA59727C64B8781BDBAA541` |
 | Image base | `0x400000` |
 | Manifest | `requestedExecutionLevel level="requireAdministrator"` |
-| Backend | `https://vntool.vn/apiv4r21/` |
-| Data host | `https://mtk.unlocktool.net/` (same address as `bypass.vntools.net`) |
+| Backend | https://vntool.vn/apiv4r21/ |
+| Data host | https://mtk.unlocktool.net/ (same address as `bypass.vntools.net`) |
+| Telegram | https://t.me/pelixx7 |
 
 The app extracts itself to `C:\UnlockTool` on first run. It is 32-bit, so it runs under WOW64 on a
 normal x64 machine. The manifest asks for administrator; for the UI tests I ran it with
@@ -189,18 +188,6 @@ It works. `GET /media/mtk_emi.txt` and `GET /media/exy_set.txt` return URLs poin
 nothing in that path decides whether the UI opens. The gate is WinLicense, locally.
 
 ## Secrets
-
-This repository is private and is meant for the application owners. The sensitive material is
-collected here on purpose.
-
-**Notification webhook** used to confirm the bypass:
-
-```
-https://discord.com/api/webhooks/1402471015400997018/tZ34rso16BsGIlhbEB-rCdCZyWFyklPyz5wH2M0L_v9eXONi9LRgJ22CQ8VRGoAW4g-K
-```
-
-`PoC/send_webhook.py` posts to it and attaches the evidence screenshot.
-
 **Test credentials used for the form.** I did not have a valid account, so I used throwaway values:
 
 | Field | Value |
